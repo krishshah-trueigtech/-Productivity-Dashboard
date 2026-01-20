@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Productivity Dashboard </title>
+        <script type = "module" src ="./script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body class ="p-5 gap-2" >
+        <div class ="flex flex-row p-3 gap-5">
+            <form  id = "taskForm"  class="flex flex-col gap-2 border border-black rounded max-w-md p-2" 
+            autocomplete = "on">
+                <div>
+                    <label for = "title">Enter title: </label>
+                    <input type = "text" id="title" class="max-w-fit" name = "title" placeholder="Enter title">
+                </div>
+                <div class = "gap-2 flex">
+                    <label for = "description">Enter description: </label>
+                    <textarea type = "text" id="description" class="max-w-fit max-h-xs " name = "description" placeholder="Enter description"></textarea>
+                </div>
+                <div>
+                    <p>Choose your task priority:</p>
+                    <input type = "radio" id="highPriority" name = "priority" value="high">
+                    <label for = "highPriority">High</label>
+                
+                    <input type = "radio" id="mediumPriority" name = "priority" value="medium">
+                    <label for = "mediumPriority">medium</label>
+                
+                    <input type = "radio" id="lowPriority" name = "priority" value="low">
+                    <label for = "lowPriority">low</label>
+                </div>
+                <button type="submit" value="Submit" class="bg-green-400 p-1 m-2 border border-black rounded">Add Task</button>
+            </form>
+            <div class="">
+                <div class = "min-w-md rounded overflow-hidden shadow-lg p-2">
+                <h1 class = "font-bold text-xl " id ="task-dashboard" ><b>Dashboard</b></h1>
+                <p id = "dashboard-total-tasks"><b>Total Tasks:  </b> </p>
+                <p id = "dashboard-completed-tasks"> <b>Completed Tasks: </b></p>
+                <p id = "dashboard-ongoing-tasks"> <b>Ongoing Tasks: </b></p>
+                <p id = "dashboard-completion-percentage"><b>Completion Percentage: </b></p>
+                </div>
+                <div class="timer-section"></div>
+                </div>
+        </div>
+        
+        <div id="list">
+
+        </div>
+    </body>
+</html>
