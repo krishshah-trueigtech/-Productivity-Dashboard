@@ -7,7 +7,7 @@
     </head>
     <body class ="p-5 gap-2" >
         <div class ="flex flex-row p-3 gap-5">
-            <form  id = "taskForm"  class="flex flex-col gap-2 border border-black rounded max-w-md p-2" 
+            <form  id = "taskForm"  class="flex-grow flex-col  border border-black rounded max-w-md p-2" 
             autocomplete = "on">
                 <div>
                     <label for = "title">Enter title: </label>
@@ -30,19 +30,43 @@
                 </div>
                 <button type="submit" value="Submit" class="bg-green-400 p-1 m-2 border border-black rounded">Add Task</button>
             </form>
-            <div class="">
-                <div class = "min-w-md rounded overflow-hidden shadow-lg p-2">
+            <div class="flex-grow p-2">
+                <div class = "min-w-md rounded overflow-hidden shadow-lg p-2 gap-2">
                 <h1 class = "font-bold text-xl " id ="task-dashboard" ><b>Dashboard</b></h1>
                 <p id = "dashboard-total-tasks"><b>Total Tasks:  </b> </p>
                 <p id = "dashboard-completed-tasks"> <b>Completed Tasks: </b></p>
                 <p id = "dashboard-ongoing-tasks"> <b>Ongoing Tasks: </b></p>
                 <p id = "dashboard-completion-percentage"><b>Completion Percentage: </b></p>
+                <p id = "dashboard-time-spent"><b>Avg time spent: </b></p>
                 </div>
                 <div class="timer-section"></div>
                 </div>
         </div>
+        <div class="flex flex-wrap gap-4 p-3 bg-gray-100 rounded mb-5">
+            <input type="text" id="searchInput" placeholder="Search tasks..." class="border p-2 rounded flex-grow">
+            
+            <select id="statusFilter" class="border p-2 rounded">
+                <option value="all">All Statuses</option>
+                <option value="pending">Pending</option>
+                <option value="ongoing">Ongoing</option>
+                <option value="completed">Completed</option>
+            </select>
         
-        <div id="list">
+            <select id="priorityFilter" class="border p-2 rounded">
+                <option value="all">All Priorities</option>
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+        
+            <select id="sortCriteria" class="border p-2 rounded">
+                <option value="createdAt">Date Created</option>
+                <option value="priority">Priority Level</option>
+                <option value="title">Alphabetical</option>
+            </select>
+        </div>
+        
+        <div id="list" class = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-screen-xl mx-auto gap-4">
 
         </div>
     </body>
