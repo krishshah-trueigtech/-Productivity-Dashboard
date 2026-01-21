@@ -7,6 +7,7 @@ export default class Task {
         this.status = "pending";
         this.createdAt = Date(); 
 
+        this.duration = 1500;
         this.remainingSeconds = 1500;
         this.isRunning = false;
  
