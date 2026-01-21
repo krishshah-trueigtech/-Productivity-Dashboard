@@ -1,4 +1,5 @@
 export const validateForm = ({title, description, priority}) => {
+    try{
     if(title === '' || !title){
         alert("Please Enter Title for the task");
         return false;
@@ -12,4 +13,7 @@ export const validateForm = ({title, description, priority}) => {
         return false;
     }
     return true;
+    }catch (error){
+        throw error;
+    }
 }
